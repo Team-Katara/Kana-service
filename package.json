@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "build": "webpack -d --watch",
-    "start": "nodemon --watch"
+    "start": "nodemon --watch",
+    "seed db": "node database/Seed.js",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -29,10 +31,9 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "eslintrc": "^1.0.6",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mongoose": "^5.9.19",
+    "mongoose": "^4.13.20",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
