@@ -32,6 +32,7 @@
     "eslintrc": "^1.0.6",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "mongoose": "^5.9.19",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
