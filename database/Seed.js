@@ -1,23 +1,26 @@
 const db = require('./index.js');
+var faker = require('faker');
 const Guitar = require('./Model.js');
 
 const sampleImages = [
   {
     name: 'Cool Guitar',
-    guitarImage: 'https://source.unsplash.com/1600x900/?cat',
+    guitarImage: faker.image.imageUrl(),
     Ratings: '15',
-    Price: '$100',
+    Price: faker.commerce.price(),
     Condition: 'New'
   },
   {
     name: 'Okay Guitar',
-    guitarImage: 'https://source.unsplash.com/1600x900/?corgi',
+    guitarImage: faker.image.imageUrl(),
     Ratings: '5',
-    Price: '$50',
+    Price: faker.commerce.price(),
     Condition: 'Old'
   }
 ];
 
+
+//seeder function
 const insertSampleImages = function() {
   Guitar.create(sampleImages, function(err) {
     if (err) { console.log('error seeding'); }
