@@ -14,7 +14,6 @@ app.get('/api/similaritems', (req, res) => {
       res.json(data);
     }
   });
-});
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
