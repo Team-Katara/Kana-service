@@ -11,10 +11,12 @@ app.listen(port, function() {
 app.use(express.static('./dist'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.status(200).send('Hello World!');
 });
 
 var faker = require('faker');
 
 console.log(faker.image.imageUrl());
 console.log(faker.name.jobTitle());
+
+module.exports = app;
