@@ -1,5 +1,5 @@
-const db = require('./index.js')
-const Guitar = require('./Model.js')
+const db = require('./index.js');
+const Guitar = require('./Model.js');
 
 const sampleImages = [
   {
@@ -15,13 +15,12 @@ const sampleImages = [
     Ratings: '5',
     Price: '$50',
     Condition: 'Old'
-
   }
-]
+];
 
 const insertSampleImages = function() {
-  Guitar.create(sampleImages, function(err){
-    if(err) { console.log('error seeding'); }
+  Guitar.create(sampleImages, function(err) {
+    if (err) { console.log('error seeding'); }
   })
     .then(() => db.disconnect());
 };

@@ -11,10 +11,10 @@ app.listen(port, function() {
 app.use(express.static('./dist'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello World!');
+});
 
 var faker = require('faker');
 
-console.log(faker.image.imageUrl())
-console.log(faker.name.jobTitle())
+console.log(faker.image.imageUrl());
+console.log(faker.name.jobTitle());
