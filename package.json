@@ -35,6 +35,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^4.13.20",
