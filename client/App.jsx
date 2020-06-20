@@ -5,12 +5,25 @@ import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      name: '',
+      guitarImage: '',
+      Ratings: '',
+      Price: '',
+      Condition: '',
+      data: []
+    };
+
   }
 
   componentDidMount() {
     axios.get('/api/similaritems')
       .then(data => {
-
+        this.setState({
+          data: data
+        });
+        console.log(this.state.data);
       });
   }
 
