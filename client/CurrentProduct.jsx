@@ -9,6 +9,7 @@ const CurrentProduct = (props) => {
       <div>{props.product.Rating}</div>
       <div>{props.product.Price}</div>
       <div>{props.product.Condition}</div>
+      <button>Add to Cart</button>
     </div>
   );
 };

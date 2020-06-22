@@ -3,7 +3,6 @@ import React from 'react';
 class FeedListItem extends React.Component {
   constructor (props) {
     super (props);
-    console.log(props)
   }
 
   render () {
@@ -14,6 +13,7 @@ class FeedListItem extends React.Component {
         <p>{this.props.item.Rating}</p>
         <p>{this.props.item.Price}</p>
         <p>{this.props.item.Condition}</p>
+        <button>Add to Cart</button>
       </div>
     );
   }

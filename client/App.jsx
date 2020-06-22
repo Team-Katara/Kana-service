@@ -49,21 +49,6 @@ class App extends React.Component {
     return (
       <div>
         {this.renderView()}
-
-        {/* <div>Current Product</div>
-        <img src={this.photo}></img>
-        <button>Add to Cart</button>
-        <p></p>
-        <div>Similar Item 1</div>
-        <button>Add to Cart</button>
-        <div>Similar Item 2</div>
-        <button>Add to Cart</button>
-        <div>Similar Item 3</div>
-        <button>Add to Cart</button>
-        <div>Similar Item 4</div>
-        <button>Add to Cart</button>
-        <div>Similar Item 5</div>
-        <button>Add to Cart</button> */}
       </div>
     );
   }

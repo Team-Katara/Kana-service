@@ -11,7 +11,6 @@ app.get ('/api/similaritems', (req, res) => {
     if (err) {
       console.log ('error finding similar items data');
     } else {
-      console.log(data)
       res.json(data);
     }
   });
