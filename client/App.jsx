@@ -1,38 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import CurrentProduct from './CurrentProduct.jsx';
+import FeedList from './FeedList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      guitarImage: '',
-      Ratings: '',
-      Price: '',
-      Condition: '',
-      data: []
+      similarItems: []
     };
 
   }
 
+  //get request receives an object with the property 'data' that has the guitar data
   componentDidMount() {
     axios.get('/api/similaritems')
       .then(data => {
+        var product = [];
+        product.push(data.data);
+        return product;
+      })
+      .then( product => {
         this.setState({
-          data: data
+          similarItems: product
         });
-        console.log(this.state.data);
+      })
+      .then( () => {
+        this.renderView();
       });
   }
 
 
+  renderView() {
+    if (this.state.similarItems.length) {
+      return (
+        <div>
+          {console.log(this.state.similarItems[0][0])}
+          <CurrentProduct product={this.state.similarItems[0][0]} />
+          <FeedList similarItems={this.state.similarItems[0].slice(1)}/>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
       <div>
-        <div>Current Product</div>
+        {this.renderView()}
+
+        {/* <div>Current Product</div>
         <img src={this.photo}></img>
         <button>Add to Cart</button>
         <p></p>
@@ -45,7 +63,7 @@ class App extends React.Component {
         <div>Similar Item 4</div>
         <button>Add to Cart</button>
         <div>Similar Item 5</div>
-        <button>Add to Cart</button>
+        <button>Add to Cart</button> */}
       </div>
     );
   }

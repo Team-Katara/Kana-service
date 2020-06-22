@@ -5,7 +5,7 @@
   "main": "./server/index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack -d --watch",
+    "ç": "webpack -d --watch",
     "start": "nodemon --watch",
     "seed db": "node database/Seed.js",
     "pretest": "eslint --ignore-path .gitignore ."
