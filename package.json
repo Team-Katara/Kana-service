@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "webpack -d --watch",
     "start": "nodemon --watch",
-    "seed db": "node database/Seed.js",
+    "seed-db": "node database/Seed.js",
     "pretest": "eslint --ignore-path .gitignore ."
   },
   "jest": {
