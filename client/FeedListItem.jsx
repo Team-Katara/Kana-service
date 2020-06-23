@@ -2,27 +2,66 @@ import React from 'react';
 import styled from 'styled-components';
 
 ///////////styled components///////////////
+
+//grid-template-rows: 35% 1fr 1fr 1fr
+
 const Product = styled.div`
   background-color: papayawhip;
   display: grid;
-  grid-template-rows: 35% 1fr 1fr 1fr  1fr 1fr;
+
+  grid-template:
+  'img'
+  'Button'
+  'Name'
+  'Name'
+  'Name'
+  'rating'
+  'price'
+  'condition';
   text-align: center;
-  border: 1px solid lightgray
+  border: 0.5px solid #f3eeee;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
   `;
+
 
 const Image = styled.div`
   justify-content: center;
-  margin-top: 10%
+  grid-area: img;
+  margin-top: 20%
+`;
+
+const Name = styled.div`
+  border: 1px solid #f3eeee;
+  background-color: lightgray;
+  grid-area: Name;
 `;
 
 const Button = styled.button`
   margin: auto;
-  width: 30%;
+  width: 50%;
   border-color: red;
   border: 1px solid red;
   background-color: white;
   margin-bottom: 15px;
+  grid-area: Button;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
 `;
+
+const Rating = styled.div`
+  grid-area: rating;
+  border: 0.5px solid #f3eeee;
+`;
+const Price = styled.div`
+  grid-area: price;
+  border: 0.5px solid #f3eeee;
+`;
+const Condition = styled.div`
+  grid-area: condition;
+  border: 0.5px solid #f3eeee;
+`;
+
 
 ///////////////////////////////////////////
 
@@ -54,10 +93,10 @@ class FeedListItem extends React.Component {
           <img src={this.props.item.guitarImage} width="100" height="75"/>
         </Image>
         <Button onClick={this.handleClick}>{this.state.button}</Button>
-        <div>{this.props.item.name}</div>
-        <div>{this.props.item.Ratings}</div>
-        <div>{this.props.item.Price}</div>
-        <div>{this.props.item.Condition}</div>
+        <Name>{this.props.item.name}</Name>
+        <Rating>{this.props.item.Ratings}</Rating>
+        <Price>{this.props.item.Price}</Price>
+        <Condition>{this.props.item.Condition}</Condition>
       </Product>
     );
   }

@@ -15,9 +15,17 @@ import styled from 'styled-components';
 // grid-template-rows: 50% 1fr 1fr 1fr  1fr;
 
 const Header = styled.div`
-  background-color: papayawhip;
   display: grid;
   grid-template:
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
     'img'
     'img'
     'img'
@@ -30,29 +38,33 @@ const Header = styled.div`
     'price'
     'condition';
   text-align: center;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
   `;
 
 const Name = styled.div`
   grid-area: Name;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
 `;
 
 const Img = styled.div`
   grid-area: img;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
 `;
 const Rating = styled.div`
   grid-area: rating;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
 `;
 const Price = styled.div`
   grid-area: price;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
 `;
 const Condition = styled.div`
   grid-area: condition;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid #f3eeee;
 `;
 
 
