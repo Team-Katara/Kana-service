@@ -15,7 +15,7 @@ import styled from 'styled-components';
 const MyComponent = styled.div`
   background-color: papayawhip;
   display: grid;
-  grid-template-rows: 55% 1fr 1fr 1fr  1fr;
+  grid-template-rows: 50% 1fr 1fr 1fr  1fr;
   grid-gap: 1px;
   text-align: center;
   border: 1px solid lightgray;

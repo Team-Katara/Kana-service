@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const Product = styled.div`
   background-color: palevioletred;
   display: grid;
-  grid-template-rows: 40% 1fr 1fr 1fr  1fr 1fr;
+  grid-template-rows: 35% 1fr 1fr 1fr  1fr 1fr;
   text-align: center;
   border: 1px solid lightgray
   `;
@@ -25,30 +25,51 @@ const Button = styled.button`
   border-color: red;
   border: 1px solid red;
   background-color: white;
+  margin-bottom: 15px;
 `;
 
 ///////////////////////////////////////////
 
-const CurrentProduct = (props) => {
+class CurrentProduct extends React.Component {
+  constructor (props) {
+    super (props);
+    this.state = {
+      button: 'Add to Cart'
+    };
 
-  return (
-    <div className='item2'>
-      <Product>
-        <Image>
-          <img src={props.product.guitarImage} width="100" height="75"/>
-        </Image>
-        <Button>
-          <span>Add to</span>
-          <span> Cart</span>
-        </Button>
-        <div>{props.product.name}</div>
-        <div>{props.product.Ratings}</div>
-        <div>{props.product.Price}</div>
-        <div>{props.product.Condition}</div>
-      </Product>
-    </div>
-  );
-};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
+  handleClick() {
+    if (this.state.button === 'Add to Cart') {
+      this.setState ({
+        button: 'Added to Cart'
+      });
+    } else {
+      this.setState ({
+        button: 'Add to Cart'
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className='item2'>
+        <Product>
+          <Image>
+            <img src={this.props.product.guitarImage} width="100" height="75"/>
+          </Image>
+          <Button onClick={this.handleClick}>{this.state.button}</Button>
+          <div>{this.props.product.name}</div>
+          <div>{this.props.product.Ratings}</div>
+          <div>{this.props.product.Price}</div>
+          <div>{this.props.product.Condition}</div>
+        </Product>
+      </div>
+    );
+  }
+}
 
 
 export default CurrentProduct;

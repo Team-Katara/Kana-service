@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Product = styled.div`
   background-color: papayawhip;
   display: grid;
-  grid-template-rows: 40% 1fr 1fr 1fr  1fr 1fr;
+  grid-template-rows: 35% 1fr 1fr 1fr  1fr 1fr;
   text-align: center;
   border: 1px solid lightgray
   `;
@@ -21,6 +21,7 @@ const Button = styled.button`
   border-color: red;
   border: 1px solid red;
   background-color: white;
+  margin-bottom: 15px;
 `;
 
 ///////////////////////////////////////////
@@ -28,6 +29,22 @@ const Button = styled.button`
 class FeedListItem extends React.Component {
   constructor (props) {
     super (props);
+    this.state = {
+      button: 'Add to Cart'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    if (this.state.button === 'Add to Cart') {
+      this.setState ({
+        button: 'Added to Cart'
+      });
+    } else {
+      this.setState ({
+        button: 'Add to Cart'
+      });
+    }
   }
 
   render () {
@@ -36,7 +53,7 @@ class FeedListItem extends React.Component {
         <Image>
           <img src={this.props.item.guitarImage} width="100" height="75"/>
         </Image>
-        <Button> Add to Cart</Button>
+        <Button onClick={this.handleClick}>{this.state.button}</Button>
         <div>{this.props.item.name}</div>
         <div>{this.props.item.Ratings}</div>
         <div>{this.props.item.Price}</div>
