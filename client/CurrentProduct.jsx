@@ -19,6 +19,11 @@ const Image = styled.div`
   margin-top: 10%
 `;
 
+const Name = styled.div`
+  border: 1px solid lightgray;
+  background-color: lightgray;
+`;
+
 const Button = styled.button`
   margin: auto;
   width: 30%;

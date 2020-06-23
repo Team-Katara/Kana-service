@@ -12,15 +12,48 @@ import styled from 'styled-components';
 //   background-color: papayawhip;
 // `;
 
-const MyComponent = styled.div`
+// grid-template-rows: 50% 1fr 1fr 1fr  1fr;
+
+const Header = styled.div`
   background-color: papayawhip;
   display: grid;
-  grid-template-rows: 50% 1fr 1fr 1fr  1fr;
-  grid-gap: 1px;
+  grid-template:
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'img'
+    'Name'
+    'rating'
+    'price'
+    'condition';
   text-align: center;
-  border: 1px solid lightgray;
-
+  border: 0.5px solid lightgray;
   `;
+
+const Name = styled.div`
+  grid-area: Name;
+  border: 0.5px solid lightgray;
+`;
+
+const Img = styled.div`
+  grid-area: img;
+  border: 0.5px solid lightgray;
+`;
+const Rating = styled.div`
+  grid-area: rating;
+  border: 0.5px solid lightgray;
+`;
+const Price = styled.div`
+  grid-area: price;
+  border: 0.5px solid lightgray;
+`;
+const Condition = styled.div`
+  grid-area: condition;
+  border: 0.5px solid lightgray;
+`;
 
 
 ///////////////////////////////////////////
@@ -57,13 +90,13 @@ class App extends React.Component {
     if (this.state.similarItems.length) {
       return (
         <div className='similarItems'>
-          <MyComponent>
-            <div>  </div>
-            <div >Name</div>
-            <div>Rating</div>
-            <div>Price</div>
-            <div>Condition</div>
-          </MyComponent>
+          <Header>
+            <Img>  </Img>
+            <Name >Name</Name>
+            <Rating>Rating</Rating>
+            <Price>Price</Price>
+            <Condition>Condition</Condition>
+          </Header>
           <CurrentProduct product={this.state.similarItems[0][0]} />
           <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
         </div>
