@@ -57,6 +57,8 @@ const Rating = styled.div`
 const Price = styled.div`
   grid-area: price;
   border: 0.5px solid #f3eeee;
+  font-weight: bold;
+  color: red;
 `;
 const Condition = styled.div`
   grid-area: condition;
