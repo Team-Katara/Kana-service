@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import StarRatings from 'react-star-ratings';
 
 ///////////styled components///////////////
 
@@ -56,6 +57,8 @@ const Rating = styled.div`
 const Price = styled.div`
   grid-area: price;
   border: 0.5px solid #f3eeee;
+  font-weight: bold;
+  color: red;
 `;
 const Condition = styled.div`
   grid-area: condition;
@@ -94,7 +97,15 @@ class FeedListItem extends React.Component {
         </Image>
         <Button onClick={this.handleClick}>{this.state.button}</Button>
         <Name>{this.props.item.name}</Name>
-        <Rating>{this.props.item.Ratings}</Rating>
+        <Rating>
+          <StarRatings
+            rating={Number(this.props.item.Ratings)}
+            starRatedColor=	'#ffb400'
+            nnumberOfStars={5}
+            starDimension="15px"
+            starSpacing="1px"
+          />
+        </Rating>
         <Price>{this.props.item.Price}</Price>
         <Condition>{this.props.item.Condition}</Condition>
       </Product>
