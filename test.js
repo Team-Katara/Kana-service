@@ -4,9 +4,19 @@
 
 //server test
 const app = require('./server/index.js');
+const start = require('./server/index.js');
+const close = require('./server/index.js');
+const server = require('./server/index.js');
 const request = require('supertest');
 
-//GET REQUEST should respond with hello world
+beforeAll( () => {
+  server.start();
+});
+afterAll( () => {
+  server.close();
+});
+
+//GET REQUEST should respond with Status 200
 describe('GET request response', () => {
   test('GET request responds with status of 200', (done) => {
     request(app)
@@ -16,4 +26,41 @@ describe('GET request response', () => {
         done();
       });
   });
+});
+
+
+//react snapshot test
+
+//react enzyme tests
+
+//Enzyme setups
+
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
+
+import App from './client/App.jsx';
+
+describe('A suite', function() {
+  it('should render without throwing an error', function() {
+    expect(shallow(<App />).contains(<div className="app">Bar</div>)).toBe(true);
+  });
+
+  it('should be selectable by class "similarItems"', function() {
+    expect(shallow(<App />).is('.similarItems')).toBe(true);
+  });
+
+  it('should mount in a full DOM', function() {
+    expect(mount(<App />).find('.similarItems').length).toBe(1);
+  });
+
+  // it ('should render to static HTML', function() {
+  //   expect(render(<Foo />).text()).toEqual('Bar');
+  // })
+
+
 });

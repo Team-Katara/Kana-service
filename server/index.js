@@ -16,8 +16,16 @@ app.get ('/api/similaritems', (req, res) => {
   });
 });
 
-app.listen(port, function() {
+
+let server;
+const start = () => (server = app.listen (port, function() {
   console.log(`listening on port ${port}`);
-});
+})
+);
+
+const close = server ? server.close : () => {};
+
 
 module.exports = app;
+module.exports.start = start;
+module.exports.close = close;

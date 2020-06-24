@@ -11,8 +11,13 @@
     "pretest": "eslint --ignore-path .gitignore ."
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "verbose": true,
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Team-Katara/Kana-service.git"
@@ -26,11 +31,15 @@
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
-    "jest": "^26.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.1.0",
     "supertest": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
@@ -44,6 +53,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-star-ratings": "^2.3.0",
+    "react-test-renderer": "^16.13.1",
     "styled-components": "^5.1.1"
   }
 }
