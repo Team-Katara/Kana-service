@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack -d --watch",
     "start": "nodemon --watch",
     "seed-db": "node database/Seed.js",
