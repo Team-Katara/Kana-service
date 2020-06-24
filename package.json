@@ -28,6 +28,7 @@
     "url": "https://github.com/Team-Katara/Kana-service/issues"
   },
   "homepage": "https://github.com/Team-Katara/Kana-service#readme",
+
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
