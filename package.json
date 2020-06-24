@@ -17,7 +17,6 @@
       "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Team-Katara/Kana-service.git"

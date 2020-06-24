@@ -3,11 +3,6 @@
  */
 
 
-
-//db tests
-//before or after running the test, clear the database to avoid duplicates
-
-
 //server test
 const app = require('./server/index.js');
 const start = require('./server/index.js');
@@ -33,27 +28,23 @@ describe('GET request response', () => {
       })
       .catch(err => console.log(err));
   });
+
+
+  test('data retrieved from database returns an array', (done) => {
+    request(app)
+      .get('/api/similaritems')
+      .then(done())
+      .then(response => {
+        expect(Array.isArray(response.body)).toBe(true);
+      })
+      .catch(err => done(err));
+  });
+
 });
 
-//db tests
-// const db = require('./database/index.js');
-
-
-// beforeAll (async () => {
-//   await db;
-// })
-
-
-
-
-
-
-//react snapshot test
 
 //react enzyme tests
-
 //Enzyme setups
-
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -77,6 +68,5 @@ describe('A suite', function() {
   it('should mount in a full DOM', function() {
     expect(mount(<App />).find('.similarItems').length).toBe(1);
   });
-
 
 });
