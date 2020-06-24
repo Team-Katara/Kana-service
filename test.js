@@ -1,3 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
+
+
 //db tests
 //before or after running the test, clear the database to avoid duplicates
 
@@ -29,6 +35,18 @@ describe('GET request response', () => {
   });
 });
 
+//db tests
+// const db = require('./database/index.js');
+
+
+// beforeAll (async () => {
+//   await db;
+// })
+
+
+
+
+
 
 //react snapshot test
 
@@ -36,29 +54,29 @@ describe('GET request response', () => {
 
 //Enzyme setups
 
-// import Enzyme from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
 
-// Enzyme.configure({ adapter: new Adapter() });
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-// import React from 'react';
-// import { shallow, mount, render } from 'enzyme';
+Enzyme.configure({ adapter: new Adapter() });
 
-// import App from './client/App.jsx';
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
 
-// describe('A suite', function() {
-//   it('should render without throwing an error', function() {
-//     expect(shallow(<App />).find('.similarItems').length).toEqual(1);
-//   });
+import App from './client/App.jsx';
 
-//   it('should be selectable by class "similarItems"', function() {
-//     expect(shallow(<App />).is('.similarItems')).toBe(true);
-//   });
+describe('A suite', function() {
+  it('should render without throwing an error', function() {
+    expect(shallow(<App />).find('.similarItems').length).toEqual(1);
+  });
 
-//   it('should mount in a full DOM', function() {
-//     expect(mount(<App />).find('.similarItems').length).toBe(1);
-//     done();
-//   });
+  it('should be selectable by class "similarItems"', function() {
+    expect(shallow(<App />).is('.similarItems')).toBe(true);
+  });
+
+  it('should mount in a full DOM', function() {
+    expect(mount(<App />).find('.similarItems').length).toBe(1);
+  });
 
 
 });

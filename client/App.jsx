@@ -94,7 +94,8 @@ class App extends React.Component {
       })
       .then( () => {
         this.renderView();
-      });
+      })
+      .catch(err => (err));
   }
 
 
