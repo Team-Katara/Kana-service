@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack -d --watch",
     "start": "nodemon --watch",
     "seed-db": "node database/Seed.js",
@@ -17,7 +17,6 @@
       "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Team-Katara/Kana-service.git"

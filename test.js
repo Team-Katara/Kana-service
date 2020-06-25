@@ -1,5 +1,6 @@
-//db tests
-//before or after running the test, clear the database to avoid duplicates
+/**
+ * @jest-environment jsdom
+ */
 
 
 //server test
@@ -9,12 +10,12 @@ const close = require('./server/index.js');
 const server = require('./server/index.js');
 const request = require('supertest');
 
-beforeAll( () => {
-  server.start();
-});
-afterAll( () => {
-  server.close();
-});
+// beforeAll( () => {
+//   server.start();
+// });
+// afterAll( () => {
+//   server.close();
+// });
 
 //GET REQUEST should respond with Status 200
 describe('GET request response', () => {
@@ -24,15 +25,25 @@ describe('GET request response', () => {
       .then(response => {
         expect(response.statusCode).toBe(200);
         done();
-      });
+      })
+      .catch(err => console.log(err));
   });
+
+
+  test('data retrieved from database returns an array', (done) => {
+    request(app)
+      .get('/api/similaritems')
+      .then(done())
+      .then(response => {
+        expect(Array.isArray(response.body)).toBe(true);
+      })
+      .catch(err => done(err));
+  });
+
 });
 
 
-//react snapshot test
-
-//react enzyme tests
-
+//react enzyme tests (NOT WORKING)
 //Enzyme setups
 
 import Enzyme from 'enzyme';
@@ -47,7 +58,7 @@ import App from './client/App.jsx';
 
 describe('A suite', function() {
   it('should render without throwing an error', function() {
-    expect(shallow(<App />).contains(<div className="app">Bar</div>)).toBe(true);
+    expect(shallow(<App />).find('.similarItems').length).toEqual(1);
   });
 
   it('should be selectable by class "similarItems"', function() {
@@ -57,10 +68,5 @@ describe('A suite', function() {
   it('should mount in a full DOM', function() {
     expect(mount(<App />).find('.similarItems').length).toBe(1);
   });
-
-  // it ('should render to static HTML', function() {
-  //   expect(render(<Foo />).text()).toEqual('Bar');
-  // })
-
 
 });
