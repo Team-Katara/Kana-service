@@ -15,56 +15,38 @@ import styled from 'styled-components';
 // grid-template-rows: 50% 1fr 1fr 1fr  1fr;
 
 const Header = styled.div`
-  display: grid;
-  grid-template:
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'Name'
-    'rating'
-    'price'
-    'condition';
+  grid-column: 1;
+  grid-row: 1 / 1;
   text-align: center;
   border: 0.5px solid #f3eeee;
   font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
   `;
 
 const Name = styled.div`
-  grid-area: Name;
+  grid-row: 2;
   border: 0.5px solid #f3eeee;
   background-color: lightgray;
+  font-size: 10px;
 `;
 
 const Img = styled.div`
-  grid-area: img;
   border: 0.5px solid #f3eeee;
 `;
 const Rating = styled.div`
-  grid-area: rating;
+  grid-row: 3;
   border: 0.5px solid #f3eeee;
+  font-size: 10px;
 `;
 const Price = styled.div`
-  grid-area: price;
+  grid-row: 4;
   border: 0.5px solid #f3eeee;
   background-color: lightgray;
+  font-size: 10px;
 `;
 const Condition = styled.div`
-  grid-area: condition;
+  grid-row: 5;
   border: 0.5px solid #f3eeee;
+  font-size: 10px;
 `;
 
 
@@ -104,12 +86,12 @@ class App extends React.Component {
       return (
         <div className='similarItems'>
           <Header>
-            <Img>  </Img>
-            <Name >Name</Name>
-            <Rating>Rating</Rating>
-            <Price>Price</Price>
-            <Condition>Condition</Condition>
+            {/* <Img>  </Img> */}
           </Header>
+          <Name >Name</Name>
+          <Rating>Rating</Rating>
+          <Price>Price</Price>
+          <Condition>Condition</Condition>
           <CurrentProduct product={this.state.similarItems[0][0]} />
           <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
         </div>

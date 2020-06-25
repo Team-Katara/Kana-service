@@ -11,9 +11,8 @@ const Product = styled.div`
 
   grid-template:
   'img'
+  'img'
   'Button'
-  'Name'
-  'Name'
   'Name'
   'rating'
   'price'
@@ -93,7 +92,8 @@ class CurrentProduct extends React.Component {
     return (
       <Product>
         <Image>
-          <span>CurrentProduct</span>
+          <p>Current</p>
+          <p>Product</p>
           <img src={this.props.product.guitarImage} width="100" height="75"/>
         </Image>
         <Button onClick={this.handleClick}>{this.state.button}</Button>
