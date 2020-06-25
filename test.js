@@ -43,7 +43,7 @@ describe('GET request response', () => {
 });
 
 
-//react enzyme tests
+//react enzyme tests (NOT WORKING)
 //Enzyme setups
 
 import Enzyme from 'enzyme';
