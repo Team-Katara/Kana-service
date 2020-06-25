@@ -13,65 +13,45 @@ import styled from 'styled-components';
 // `;
 
 // grid-template-rows: 50% 1fr 1fr 1fr  1fr;
+
+
+
 const GridLayout = styled.div`
-  display: grid;
-  grid-template-areas:
+  && {
+      background-color: red;
+
+        .Banner {
+          grid-row: 1
+        }
+
+        .Img {
+          grid-row: 2;
+          border: 0.5px solid #f3eeee;
+        }
+
+        .Name {
+          grid-row: 4;
+          border: 0.5px solid #f3eeee;
+          background-color: lightgray;
+        }
+
+        .Rating {
+          grid-row: 5;
+          border: 0.5px solid #f3eeee;
+        }
+
+        .Price {
+          grid-row: 6;
+          border: 0.5px solid #f3eeee;
+          background-color: lightgray;
+        }
+
+        .Condition {
+          grid-row: 7;
+          border: 0.5px solid #f3eeee;
+        }
 
 `;
-
-const Header = styled.div`
-  display: grid;
-  grid-template-areas:
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'img'
-    'Name'
-    'rating'
-    'price'
-    'condition';
-  text-align: center;
-  border: 0.5px solid #f3eeee;
-  font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
-  `;
-
-const Name = styled.div`
-  grid-area: Name;
-  border: 0.5px solid #f3eeee;
-  background-color: lightgray;
-`;
-
-const Img = styled.div`
-  grid-area: img;
-  border: 0.5px solid #f3eeee;
-`;
-const Rating = styled.div`
-  grid-area: rating;
-  border: 0.5px solid #f3eeee;
-`;
-const Price = styled.div`
-  grid-area: price;
-  border: 0.5px solid #f3eeee;
-  background-color: lightgray;
-`;
-const Condition = styled.div`
-  grid-area: condition;
-  border: 0.5px solid #f3eeee;
-`;
-
 
 ///////////////////////////////////////////
 class App extends React.Component {
@@ -107,16 +87,17 @@ class App extends React.Component {
   renderView() {
     if (this.state.similarItems.length) {
       return (
-        <div className='similarItems'>
-          <Header>
-            <Img>  </Img>
-            <Name >Name</Name>
-            <Rating>Rating</Rating>
-            <Price>Price</Price>
-            <Condition>Condition</Condition>
-          </Header>
-          <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
-          <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
+        <div className='container'>
+          <GridLayout className='similarItems'>
+            <GridLayout className='Banner'/>
+            <GridLayout className='Img' />
+            <GridLayout className='Name' >Name</GridLayout>
+            <GridLayout className='Rating'>Rating</GridLayout>
+            <GridLayout className='Price'>Price</GridLayout>
+            <GridLayout className='Condition'>Condition</GridLayout>
+            <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
+            <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
+          </GridLayout>
         </div>
       );
     }
