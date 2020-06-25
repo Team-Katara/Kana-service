@@ -53,6 +53,10 @@ const Button = styled.button`
 const Rating = styled.div`
   grid-area: rating;
   border: 0.5px solid #f3eeee;
+
+  &: hover {
+    color: red;
+  }
 `;
 const Price = styled.div`
   grid-area: price;
@@ -105,6 +109,7 @@ class FeedListItem extends React.Component {
             starDimension="15px"
             starSpacing="1px"
           />
+          ({this.props.item.Ratings})
         </Rating>
         <Price>{this.props.item.Price}</Price>
         <Condition>{this.props.item.Condition}</Condition>

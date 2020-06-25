@@ -13,10 +13,15 @@ import styled from 'styled-components';
 // `;
 
 // grid-template-rows: 50% 1fr 1fr 1fr  1fr;
+const GridLayout = styled.div`
+  display: grid;
+  grid-template-areas:
+
+`;
 
 const Header = styled.div`
   display: grid;
-  grid-template:
+  grid-template-areas:
     'img'
     'img'
     'img'
@@ -110,7 +115,7 @@ class App extends React.Component {
             <Price>Price</Price>
             <Condition>Condition</Condition>
           </Header>
-          <CurrentProduct product={this.state.similarItems[0][0]} />
+          <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
           <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
         </div>
       );

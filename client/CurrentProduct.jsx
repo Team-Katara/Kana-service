@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import StarRatings from 'react-star-ratings';
 
 ///////////styled components///////////////
 
@@ -7,17 +8,6 @@ import styled from 'styled-components';
 
 const Product = styled.div`
   background-color: palevioletred;
-  display: grid;
-
-  grid-template:
-  'img'
-  'Button'
-  'Name'
-  'Name'
-  'Name'
-  'rating'
-  'price'
-  'condition';
   text-align: center;
   border: 0.5px solid #f3eeee;
   font-family: montserratregular,Arial,Helvetica,sans-serif;
@@ -53,6 +43,10 @@ const Button = styled.button`
 const Rating = styled.div`
   grid-area: rating;
   border: 0.5px solid #f3eeee;
+
+  &: hover {
+    color: red;
+  }
 `;
 const Price = styled.div`
   grid-area: price;
@@ -98,7 +92,16 @@ class CurrentProduct extends React.Component {
         </Image>
         <Button onClick={this.handleClick}>{this.state.button}</Button>
         <Name>{this.props.product.name}</Name>
-        <Rating>{this.props.product.Ratings}</Rating>
+        <Rating>
+          <StarRatings
+            rating={Number(this.props.product.Ratings)}
+            starRatedColor=	'#ffb400'
+            nnumberOfStars={5}
+            starDimension="15px"
+            starSpacing="1px"
+          />
+          ({this.props.product.Ratings})
+        </Rating>
         <Price>{this.props.product.Price}</Price>
         <Condition>{this.props.product.Condition}</Condition>
       </Product>
