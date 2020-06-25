@@ -9,21 +9,16 @@ import styled from 'styled-components';
 
 ///////////styled components///////////////
 
-// const GridLayout = styled.div`
-//   && {
-//       background-color: papayawhip;
-//       grid-column: 1;
-//       border: 1px solid #f3eeee;
-//     }
-// `
-
 const Banner = styled.div`
   grid-row: 1
 `;
 
 const Image = styled.div`
   grid-row: 2;
+`;
 
+const Placeholder = styled.div`
+  grid-row: 3;
 `;
 
 const Name = styled.div`
@@ -87,12 +82,13 @@ class App extends React.Component {
         <div className='similarItems'>
           <Banner/>
           <Image/>
+          <Placeholder/>
           <Name>Name</Name>
           <Rating >Rating</Rating>
           <Price >Price</Price>
           <Condition>Condition</Condition>
           <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
-          {/* <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/> */}
+          <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
         </div>
       );
     }

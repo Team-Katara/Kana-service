@@ -35,6 +35,7 @@ const Name = styled.div`
   background-color: lightgray;
   grid-column: 2;
   grid-row: 4;
+  justify-content: center;
 `;
 
 const Rating = styled.div`
