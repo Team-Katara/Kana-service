@@ -9,43 +9,45 @@ import styled from 'styled-components';
 
 ///////////styled components///////////////
 
-const GridLayout = styled.div`
-  && {
-      background-color: red;
-      grid-column: 1;
-      border: 1px solid #f3eeee;
+// const GridLayout = styled.div`
+//   && {
+//       background-color: papayawhip;
+//       grid-column: 1;
+//       border: 1px solid #f3eeee;
+//     }
+// `
 
-        .Banner {
-          grid-row: 1
-        }
+const Banner = styled.div`
+  grid-row: 1
+`;
 
-        .Img {
-          grid-row: 2;
-          border: 0.5px solid #f3eeee;
-        }
+const Image = styled.div`
+  grid-row: 2;
 
-        .Name {
-          grid-row: 4;
-          border: 0.5px solid #f3eeee;
-          background-color: lightgray;
-        }
+`;
 
-        .Rating {
-          grid-row: 5;
-          border: 0.5px solid #f3eeee;
-        }
+const Name = styled.div`
+  grid-row: 4;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
+`;
 
-        .Price {
-          grid-row: 6;
-          border: 0.5px solid #f3eeee;
-          background-color: lightgray;
-        }
+const Rating = styled.div`
+  grid-row: 5;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
+`;
 
-        .Condition {
-          grid-row: 7;
-          border: 0.5px solid #f3eeee;
-        }
+const Price = styled.div`
+  grid-row: 6;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
+`;
 
+const Condition = styled.div`
+  grid-row: 7;
+  border: 0.5px solid #f3eeee;
+  background-color: lightgray;
 `;
 
 ///////////////////////////////////////////
@@ -83,12 +85,12 @@ class App extends React.Component {
     if (this.state.similarItems.length) {
       return (
         <div className='similarItems'>
-          <GridLayout className='Banner'/>
-          <GridLayout className='Img' />
-          <GridLayout className='Name' >Name</GridLayout>
-          <GridLayout className='Rating'>Rating</GridLayout>
-          <GridLayout className='Price'>Price</GridLayout>
-          <GridLayout className='Condition'>Condition</GridLayout>
+          <Banner/>
+          <Image/>
+          <Name>Name</Name>
+          <Rating >Rating</Rating>
+          <Price >Price</Price>
+          <Condition>Condition</Condition>
           <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
           {/* <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/> */}
         </div>
