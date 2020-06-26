@@ -25,24 +25,40 @@ const Name = styled.div`
   grid-row: 4;
   border: 0.5px solid #f3eeee;
   background-color: lightgray;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Rating = styled.div`
   grid-row: 5;
   border: 0.5px solid #f3eeee;
-  background-color: lightgray;
+  background-color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Price = styled.div`
   grid-row: 6;
   border: 0.5px solid #f3eeee;
   background-color: lightgray;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Condition = styled.div`
   grid-row: 7;
   border: 0.5px solid #f3eeee;
-  background-color: lightgray;
+  background-color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 ///////////////////////////////////////////
@@ -79,7 +95,7 @@ class App extends React.Component {
   renderView() {
     if (this.state.similarItems.length) {
       return (
-        <div className='similarItems'>
+        <div className='similarItems' id='container'>
           <Banner/>
           <Image/>
           <Placeholder/>
