@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --coverage",
     "build": "webpack -d --watch",
     "start": "nodemon --watch",
     "seed-db": "node database/Seed.js",
@@ -15,6 +15,14 @@
     "verbose": true,
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 10,
+        "functions": 10,
+        "lines": 10,
+        "statements": 10
+      }
     }
   },
   "repository": {
