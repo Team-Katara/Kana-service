@@ -7,8 +7,8 @@ import StarRatings from 'react-star-ratings';
 const Banner = styled.div`
   grid-row: 1;
   background-color: white;
-  border-top: 1px solid palevioletred;
-  border-right: 1px solid palevioletred;
+  border-top: 1px solid #f3eeee;
+  border-right: 1px solid #f3eeee;
   `;
 
 const Image = styled.div`
@@ -17,17 +17,22 @@ const Image = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-right: 1px solid palevioletred;
+  border-right: 1px solid #f3eeee;
+`;
+
+const Wrapper = styled.div`
+    border-right: 1px solid #f3eeee;
+    grid-row: 3;
 `;
 
 const Button = styled.button`
+    display: flex;
     margin: auto;
     grid-row: 3;
     width: 35%;
     border-color: red;
     border: 1px solid red;
     background-color: white;
-    margin-bottom: 15px;
     font-family: montserratregular,Arial,Helvetica,sans-serif;
     font-size: 10px;
   `;
@@ -103,7 +108,9 @@ class FeedListItem extends React.Component {
         <Image>
           <img src={this.props.item.guitarImage} width="100" height="75"/>
         </Image>
-        <Button onClick={this.handleClick}>{this.state.button}</Button>
+        <Wrapper>
+          <Button onClick={this.handleClick}>{this.state.button}</Button>
+        </Wrapper>
         <Name>{this.props.item.name}</Name>
         <Rating>
           <StarRatings
