@@ -12,8 +12,8 @@ const Banner = styled.div`
   align-items: center;
   background-color: white;
   font-size: 10px;
-  border-top: 1px solid palevioletred;
-  border-right: 1px solid palevioletred;
+  border-top: 1px solid #f3eeee;
+  border-right: 1px solid #f3eeee;
 `;
 
 const Image = styled.div`
@@ -23,11 +23,11 @@ const Image = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-right: 1px solid palevioletred;
+  border-right: 1px solid #f3eeee;
 `;
 
 const Wrapper = styled.div`
-  border-right: 1px solid palevioletred;
+  border-right: 1px solid #f3eeee;
   grid-row: 3;
   grid-column: 2;
 `;
