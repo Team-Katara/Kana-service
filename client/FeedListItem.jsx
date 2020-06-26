@@ -6,15 +6,18 @@ import StarRatings from 'react-star-ratings';
 
 const Banner = styled.div`
   grid-row: 1;
-  margin: auto;
   background-color: white;
+  border-top: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
   `;
 
 const Image = styled.div`
   grid-row: 2;
-  margin: auto;
-  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
+  border-right: 1px solid palevioletred;
 `;
 
 const Button = styled.button`

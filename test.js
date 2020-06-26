@@ -62,7 +62,7 @@ describe('A suite', function() {
   });
 
   it('should be selectable by class "similarItems"', function() {
-    expect(shallow(<App />).is('.similarItems')).toBe(true);
+    expect(shallow(<App />).find('.similarItems')).toBe(true);
   });
 
   it('should mount in a full DOM', function() {

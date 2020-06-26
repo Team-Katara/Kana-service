@@ -8,22 +8,33 @@ import styled from 'styled-components';
 
 
 ///////////styled components///////////////
+//borderline color #f3eeee
 
 const Banner = styled.div`
-  grid-row: 1
+  grid-row: 1;
+  background-color: white;
+  border-top: 1px solid palevioletred;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Image = styled.div`
   grid-row: 2;
+  background-color: white;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Placeholder = styled.div`
   grid-row: 3;
+  background-color: white;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Name = styled.div`
   grid-row: 4;
-  border: 0.5px solid #f3eeee;
+  border: 0.5px solid palevioletred;
   background-color: lightgray;
   font-weight: bold;
   display: flex;
@@ -33,7 +44,7 @@ const Name = styled.div`
 
 const Rating = styled.div`
   grid-row: 5;
-  border: 0.5px solid #f3eeee;
+  border: 0.5px solid palevioletred;
   background-color: white;
   font-weight: bold;
   display: flex;
@@ -43,7 +54,7 @@ const Rating = styled.div`
 
 const Price = styled.div`
   grid-row: 6;
-  border: 0.5px solid #f3eeee;
+  border: 0.5px solid palevioletred;
   background-color: lightgray;
   font-weight: bold;
   display: flex;
@@ -53,7 +64,7 @@ const Price = styled.div`
 
 const Condition = styled.div`
   grid-row: 7;
-  border: 0.5px solid #f3eeee;
+  border: 0.5px solid palevioletred;
   background-color: white;
   font-weight: bold;
   display: flex;
