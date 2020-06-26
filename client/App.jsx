@@ -34,32 +34,38 @@ const Placeholder = styled.div`
 
 const Name = styled.div`
   grid-row: 4;
-  border: 0.5px solid palevioletred;
   background-color: lightgray;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid palevioletred;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Rating = styled.div`
   grid-row: 5;
-  border: 0.5px solid palevioletred;
   background-color: white;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid palevioletred;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Price = styled.div`
   grid-row: 6;
-  border: 0.5px solid palevioletred;
   background-color: lightgray;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid palevioletred;
+  border-left: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Condition = styled.div`

@@ -26,7 +26,14 @@ const Image = styled.div`
   border-right: 1px solid palevioletred;
 `;
 
+const Wrapper = styled.div`
+  border-right: 1px solid palevioletred;
+  grid-row: 3;
+  grid-column: 2;
+`;
+
 const Button = styled.button`
+  display: flex;
   margin: auto;
   grid-row: 3;
   grid-column: 2;
@@ -34,7 +41,6 @@ const Button = styled.button`
   border-color: red;
   border: 1px solid red;
   background-color: white;
-  margin-bottom: 15px;
   font-size: 10px;
 `;
 
@@ -118,7 +124,9 @@ class CurrentProduct extends React.Component {
         <Image>
           <img src={this.props.product.guitarImage} width="100" height="75"/>
         </Image>
-        <Button onClick={this.handleClick}>{this.state.button}</Button>
+        <Wrapper>
+          <Button onClick={this.handleClick}>{this.state.button}</Button>
+        </Wrapper>
         <Name>{this.props.product.name}</Name>
         <Rating>
           <StarRatings
