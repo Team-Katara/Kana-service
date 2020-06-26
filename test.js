@@ -22,6 +22,7 @@ describe('GET request response', () => {
   test('GET request responds with status of 200', (done) => {
     request(app)
       .get('/')
+      .then(done())
       .then(response => {
         expect(response.statusCode).toBe(200);
         done();
@@ -62,7 +63,7 @@ import App from './client/App.jsx';
 //   });
 
 //   it('should be selectable by class "similarItems"', function() {
-//     expect(shallow(<App />).is('.similarItems')).toBe(true);
+//     expect(shallow(<App />).find('.similarItems')).toBe(true);
 //   });
 
 //   it('should mount in a full DOM', function() {

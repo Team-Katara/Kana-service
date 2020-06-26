@@ -6,19 +6,24 @@ import StarRatings from 'react-star-ratings';
 
 const Banner = styled.div`
   grid-row: 1;
-  margin: auto;
+  background-color: white;
+  border-top: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
   `;
 
 const Image = styled.div`
   grid-row: 2;
-  margin: auto;
-  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-right: 1px solid palevioletred;
 `;
 
 const Button = styled.button`
     margin: auto;
     grid-row: 3;
-    width: 50%;
+    width: 35%;
     border-color: red;
     border: 1px solid red;
     background-color: white;
@@ -29,13 +34,20 @@ const Button = styled.button`
 
 const Name = styled.div`
   border: 1px solid #f3eeee;
-  background-color: lightgray;
+  background-color: #f8f8f8;
   grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 `;
 
 const Rating = styled.div`
   grid-row: 5;
   border: 0.5px solid #f3eeee;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 
   &: hover {
     color: red;
@@ -44,10 +56,21 @@ const Rating = styled.div`
 const Price = styled.div`
   grid-row: 6;
   border: 0.5px solid #f3eeee;
+  color: red;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 `;
+
 const Condition = styled.div`
   grid-row: 7;
   border: 0.5px solid #f3eeee;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 `;
 
 ///////////////////////////////////////////

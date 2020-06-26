@@ -7,41 +7,55 @@ import StarRatings from 'react-star-ratings';
 const Banner = styled.div`
   grid-column: 2;
   grid-row: 1;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 10px;
+  border-top: 1px solid palevioletred;
+  border-right: 1px solid palevioletred;
 `;
 
 const Image = styled.div`
   grid-column: 2;
   grid-row: 2;
-  margin: auto;
-  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-right: 1px solid palevioletred;
 `;
 
 const Button = styled.button`
-    margin: auto;
-    grid-row: 3;
-    grid-column: 2;
-    width: 50%;
-    border-color: red;
-    border: 1px solid red;
-    background-color: white;
-    margin-bottom: 15px;
-    font-family: montserratregular,Arial,Helvetica,sans-serif;
-    font-size: 10px;
-  `;
+  margin: auto;
+  grid-row: 3;
+  grid-column: 2;
+  width: 35%;
+  border-color: red;
+  border: 1px solid red;
+  background-color: white;
+  margin-bottom: 15px;
+  font-size: 10px;
+`;
 
 const Name = styled.div`
   border: 1px solid #f3eeee;
-  background-color: lightgray;
+  background-color: #f8f8f8;
   grid-column: 2;
   grid-row: 4;
+  display: flex;
   justify-content: center;
-`;
+  align-items: center;;
+  `;
 
 const Rating = styled.div`
   grid-row: 5;
   grid-column: 2;
   border: 0.5px solid #f3eeee;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 
   &: hover {
     color: red;
@@ -51,11 +65,22 @@ const Price = styled.div`
   grid-column: 2;
   grid-row: 6;
   border: 0.5px solid #f3eeee;
+  color: red;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+  font-weight: bold;
 `;
+
 const Condition = styled.div`
   grid-column: 2;
   grid-row: 7;
   border: 0.5px solid #f3eeee;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 `;
 
 
@@ -87,7 +112,8 @@ class CurrentProduct extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Banner>CurrentProduct
+        <Banner>
+          Current<br></br>Product
         </Banner>
         <Image>
           <img src={this.props.product.guitarImage} width="100" height="75"/>
