@@ -4,67 +4,51 @@ import StarRatings from 'react-star-ratings';
 
 ///////////styled components///////////////
 
-//grid-template-rows: 35% 1fr 1fr 1fr
-
-const Product = styled.div`
-  background-color: papayawhip;
-  display: grid;
-
-  grid-template:
-  'img'
-  'Button'
-  'Name'
-  'Name'
-  'Name'
-  'rating'
-  'price'
-  'condition';
-  text-align: center;
-  border: 0.5px solid #f3eeee;
-  font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
+const Banner = styled.div`
+  grid-row: 1;
+  margin: auto;
   `;
 
-
 const Image = styled.div`
-  justify-content: center;
-  grid-area: img;
-  margin-top: 20%
+  grid-row: 2;
+  margin: auto;
+  margin-top: 5%;
 `;
+
+const Button = styled.button`
+    margin: auto;
+    grid-row: 3;
+    width: 50%;
+    border-color: red;
+    border: 1px solid red;
+    background-color: white;
+    margin-bottom: 15px;
+    font-family: montserratregular,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+  `;
 
 const Name = styled.div`
   border: 1px solid #f3eeee;
   background-color: lightgray;
-  grid-area: Name;
-`;
-
-const Button = styled.button`
-  margin: auto;
-  width: 50%;
-  border-color: red;
-  border: 1px solid red;
-  background-color: white;
-  margin-bottom: 15px;
-  grid-area: Button;
-  font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
+  grid-row: 4;
 `;
 
 const Rating = styled.div`
-  grid-area: rating;
+  grid-row: 5;
   border: 0.5px solid #f3eeee;
+
+  &: hover {
+    color: red;
+  }
 `;
 const Price = styled.div`
-  grid-area: price;
+  grid-row: 6;
   border: 0.5px solid #f3eeee;
-  font-weight: bold;
-  color: red;
 `;
 const Condition = styled.div`
-  grid-area: condition;
+  grid-row: 7;
   border: 0.5px solid #f3eeee;
 `;
-
 
 ///////////////////////////////////////////
 
@@ -91,7 +75,8 @@ class FeedListItem extends React.Component {
 
   render () {
     return (
-      <Product>
+      <React.Fragment>
+        <Banner />
         <Image>
           <img src={this.props.item.guitarImage} width="100" height="75"/>
         </Image>
@@ -105,10 +90,11 @@ class FeedListItem extends React.Component {
             starDimension="15px"
             starSpacing="1px"
           />
+          ({this.props.item.Ratings})
         </Rating>
         <Price>{this.props.item.Price}</Price>
         <Condition>{this.props.item.Condition}</Condition>
-      </Product>
+      </React.Fragment>
     );
   }
 }

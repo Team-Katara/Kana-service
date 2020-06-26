@@ -22,6 +22,7 @@ const start = () => (server = app.listen (port, function() {
   // console.log(`listening on port ${port}`);
 })
 );
+start();
 
 const close = server ? server.close : () => {};
 

@@ -1,65 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
+import StarRatings from 'react-star-ratings';
 
 ///////////styled components///////////////
 
-//grid-template-rows: 35% 1fr 1fr 1fr  1fr 1fr;
-
-const Product = styled.div`
-  background-color: palevioletred;
-  display: grid;
-
-  grid-template:
-  'img'
-  'Button'
-  'Name'
-  'Name'
-  'Name'
-  'rating'
-  'price'
-  'condition';
-  text-align: center;
-  border: 0.5px solid #f3eeee;
-  font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
-  `;
-
+const Banner = styled.div`
+  grid-column: 2;
+  grid-row: 1;
+  margin: auto;
+`;
 
 const Image = styled.div`
-  justify-content: center;
-  grid-area: img;
+  grid-column: 2;
+  grid-row: 2;
+  margin: auto;
   margin-top: 5%;
-
 `;
+
+const Button = styled.button`
+    margin: auto;
+    grid-row: 3;
+    grid-column: 2;
+    width: 50%;
+    border-color: red;
+    border: 1px solid red;
+    background-color: white;
+    margin-bottom: 15px;
+    font-family: montserratregular,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+  `;
 
 const Name = styled.div`
   border: 1px solid #f3eeee;
   background-color: lightgray;
-  grid-area: Name;
-`;
-
-const Button = styled.button`
-  margin: auto;
-  width: 50%;
-  border-color: red;
-  border: 1px solid red;
-  background-color: white;
-  margin-bottom: 15px;
-  grid-area: Button;
-  font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
+  grid-column: 2;
+  grid-row: 4;
+  justify-content: center;
 `;
 
 const Rating = styled.div`
-  grid-area: rating;
+  grid-row: 5;
+  grid-column: 2;
   border: 0.5px solid #f3eeee;
+
+  &: hover {
+    color: red;
+  }
 `;
 const Price = styled.div`
-  grid-area: price;
+  grid-column: 2;
+  grid-row: 6;
   border: 0.5px solid #f3eeee;
 `;
 const Condition = styled.div`
-  grid-area: condition;
+  grid-column: 2;
+  grid-row: 7;
   border: 0.5px solid #f3eeee;
 `;
 
@@ -91,17 +86,27 @@ class CurrentProduct extends React.Component {
 
   render() {
     return (
-      <Product>
+      <React.Fragment>
+        <Banner>CurrentProduct
+        </Banner>
         <Image>
-          <span>CurrentProduct</span>
           <img src={this.props.product.guitarImage} width="100" height="75"/>
         </Image>
         <Button onClick={this.handleClick}>{this.state.button}</Button>
         <Name>{this.props.product.name}</Name>
-        <Rating>{this.props.product.Ratings}</Rating>
+        <Rating>
+          <StarRatings
+            rating={Number(this.props.product.Ratings)}
+            starRatedColor=	'#ffb400'
+            nnumberOfStars={5}
+            starDimension="15px"
+            starSpacing="1px"
+          />
+          ({this.props.product.Ratings})
+        </Rating>
         <Price>{this.props.product.Price}</Price>
         <Condition>{this.props.product.Condition}</Condition>
-      </Product>
+      </React.Fragment>
     );
   }
 }
