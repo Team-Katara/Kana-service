@@ -18,9 +18,15 @@ const seedDB = function() {
     }
   };
 
+  var imageMaker = function() {
+    var baseURL = 'https://picsum.photos/200/300?random=';
+    var randomize = Math.floor(Math.random() * 100);
+    return baseURL + randomize;
+  };
+
   for (var i = 0; i <= dataCount; i++) {
     var fakename = faker.commerce.productName();
-    var fakeguitarImage = faker.image.imageUrl();
+    var fakeguitarImage = imageMaker();
     var fakeRatings = Math.floor(Math.random() * 5);
     var fakePrice = '$' + faker.commerce.price();
     var fakeCondition = conditionMaker();
