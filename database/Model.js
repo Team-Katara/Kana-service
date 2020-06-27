@@ -7,7 +7,8 @@ const guitarSchema = new mongoose.Schema({
   Ratings: Number,
   ReviewCount: Number,
   Price: String,
-  Condition: String
+  Condition: String,
+  Group: Number
 });
 
 const Guitar = mongoose.model('Guitar', guitarSchema);

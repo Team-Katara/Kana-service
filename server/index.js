@@ -16,6 +16,18 @@ app.get ('/api/similaritems', (req, res) => {
   });
 });
 
+//return data by groupID
+app.get ('/api/similaritems/:group', (req, res) => {
+  var group = req.params.group;
+  Guitar.find({Group: `${group}`}, (err, data) => {
+    if (err) {
+      console.log ('error finding similar items data');
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 
 let server;
 const start = () => (server = app.listen (port, function() {

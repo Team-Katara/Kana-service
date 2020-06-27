@@ -31,6 +31,7 @@ const seedDB = function() {
     var fakeRatings = Math.floor(Math.random() * 5);
     var fakePrice = '$' + faker.commerce.price();
     var fakeCondition = conditionMaker();
+    var group = Math.floor(Math.random() * 3);
 
     var dataBulk = {
       name: fakename,
@@ -38,7 +39,8 @@ const seedDB = function() {
       Ratings: fakeRatings,
       ReviewCount: fakeReviewCount,
       Price: fakePrice,
-      Condition: fakeCondition
+      Condition: fakeCondition,
+      Group: group
     };
 
     data.push(dataBulk);
