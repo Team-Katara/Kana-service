@@ -50,8 +50,8 @@ const Name = styled.div`
   grid-column: 2;
   grid-row: 4;
   display: flex;
-  justify-content: center;
-  align-items: center;;
+  text-align: center;
+  align-items: center;
   `;
 
 const Rating = styled.div`

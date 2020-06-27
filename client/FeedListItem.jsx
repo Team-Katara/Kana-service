@@ -42,8 +42,8 @@ const Name = styled.div`
   background-color: #f8f8f8;
   grid-row: 4;
   display: flex;
-  justify-content: center;
-  align-items: center;;
+  text-align: center;
+  align-items: center;
 `;
 
 const Rating = styled.div`

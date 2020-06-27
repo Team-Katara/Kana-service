@@ -25,7 +25,7 @@ const seedDB = function() {
   };
 
   for (var i = 0; i <= dataCount; i++) {
-    var fakename = faker.commerce.productName();
+    var fakename = faker.company.companyName() + '\n' + faker.commerce.productAdjective() + '\n' + faker.commerce.productName() + '\n' + faker.commerce.color();
     var fakeguitarImage = imageMaker();
     var fakeRatings = Math.floor(Math.random() * 5);
     var fakePrice = '$' + faker.commerce.price();
@@ -55,3 +55,4 @@ const insertData = function() {
 };
 
 insertData();
+
