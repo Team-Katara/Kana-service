@@ -9,8 +9,7 @@ const seedDB = function() {
   //create data set with random input for amount (dataCount)
 
   var conditionMaker = function() {
-    var condition = Math.random();
-
+    var condition = Math.floor(Math.random() * 1);
     if (condition === 0) {
       return 'New';
     } else {
@@ -24,9 +23,11 @@ const seedDB = function() {
     return baseURL + randomize;
   };
 
+
   for (var i = 0; i <= dataCount; i++) {
     var fakename = faker.company.companyName() + '\n' + faker.commerce.productAdjective() + '\n' + faker.commerce.productName() + '\n' + faker.commerce.color();
     var fakeguitarImage = imageMaker();
+    var fakeReviewCount = Math.floor(Math.random() * 500);
     var fakeRatings = Math.floor(Math.random() * 5);
     var fakePrice = '$' + faker.commerce.price();
     var fakeCondition = conditionMaker();
@@ -35,6 +36,7 @@ const seedDB = function() {
       name: fakename,
       guitarImage: fakeguitarImage,
       Ratings: fakeRatings,
+      ReviewCount: fakeReviewCount,
       Price: fakePrice,
       Condition: fakeCondition
     };

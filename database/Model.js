@@ -4,7 +4,8 @@ const db = require('./index.js');
 const guitarSchema = new mongoose.Schema({
   name: String,
   guitarImage: String,
-  Ratings: String,
+  Ratings: Number,
+  ReviewCount: Number,
   Price: String,
   Condition: String
 });

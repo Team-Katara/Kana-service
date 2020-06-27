@@ -136,7 +136,7 @@ class CurrentProduct extends React.Component {
             starDimension="15px"
             starSpacing="1px"
           />
-          ({this.props.product.Ratings})
+          ({this.props.product.ReviewCount})
         </Rating>
         <Price>{this.props.product.Price}</Price>
         <Condition>{this.props.product.Condition}</Condition>

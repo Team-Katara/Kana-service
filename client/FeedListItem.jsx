@@ -120,7 +120,7 @@ class FeedListItem extends React.Component {
             starDimension="15px"
             starSpacing="1px"
           />
-          ({this.props.item.Ratings})
+          ({this.props.item.ReviewCount})
         </Rating>
         <Price>{this.props.item.Price}</Price>
         <Condition>{this.props.item.Condition}</Condition>
