@@ -6,16 +6,6 @@ const Guitar = require('../database/Model.js');
 
 app.use (express.static('./dist'));
 
-// app.get ('/api/similaritems', (req, res) => {
-//   Guitar.find( (err, data) => {
-//     if (err) {
-//       console.log ('error finding similar items data');
-//     } else {
-//       res.json(data);
-//     }
-//   });
-// });
-
 //return data by groupID
 app.get ('/api/similaritems', (req, res) => {
   console.log(req.query.id);

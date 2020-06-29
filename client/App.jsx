@@ -107,7 +107,6 @@ class App extends React.Component {
       })
       .then( () => {
         this.renderView();
-        console.log('render invoked')
       })
       .catch(err => (err));
   }
