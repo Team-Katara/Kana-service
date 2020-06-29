@@ -6,19 +6,20 @@ const Guitar = require('../database/Model.js');
 
 app.use (express.static('./dist'));
 
-app.get ('/api/similaritems', (req, res) => {
-  Guitar.find( (err, data) => {
-    if (err) {
-      console.log ('error finding similar items data');
-    } else {
-      res.json(data);
-    }
-  });
-});
+// app.get ('/api/similaritems', (req, res) => {
+//   Guitar.find( (err, data) => {
+//     if (err) {
+//       console.log ('error finding similar items data');
+//     } else {
+//       res.json(data);
+//     }
+//   });
+// });
 
 //return data by groupID
-app.get ('/api/similaritems/:group', (req, res) => {
-  var group = req.params.group;
+app.get ('/api/similaritems', (req, res) => {
+  console.log(req.query.id);
+  var group = req.query.id;
   Guitar.find({Group: `${group}`}, (err, data) => {
     if (err) {
       console.log ('error finding similar items data');
