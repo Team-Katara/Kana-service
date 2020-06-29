@@ -91,7 +91,10 @@ class App extends React.Component {
 
   //get request receives an object with the property 'data' that has the guitar data
   componentDidMount() {
-    axios.get('/api/similaritems')
+    var urlParams = new URLSearchParams(window.location.search.substring(1));
+    var params = urlParams.get('id');
+
+    axios.get('/api/similaritems/?id=' + params)
       .then(data => {
         var product = [];
         product.push(data.data);
@@ -124,6 +127,8 @@ class App extends React.Component {
           <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
         </div>
       );
+    } else {
+      return null;
     }
   }
 

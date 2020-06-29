@@ -4,7 +4,7 @@ const Guitar = require('./Model.js');
 
 const seedDB = function() {
   var data = [];
-  var dataCount = 10;
+  var dataCount = 150;
 
   //create data set with random input for amount (dataCount)
 
@@ -31,7 +31,7 @@ const seedDB = function() {
     var fakeRatings = Math.floor(Math.random() * 5);
     var fakePrice = '$' + faker.commerce.price();
     var fakeCondition = conditionMaker();
-    var group = Math.floor(Math.random() * 3);
+    var group = Math.floor(Math.random() * 100);
 
     var dataBulk = {
       name: fakename,
