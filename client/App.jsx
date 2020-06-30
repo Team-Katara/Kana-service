@@ -96,6 +96,7 @@ class App extends React.Component {
 
     axios.get('/api/similaritems/?id=' + params)
       .then(data => {
+        console.log(data.data);
         var product = [];
         product.push(data.data);
         return product;
