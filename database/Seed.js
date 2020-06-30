@@ -4,10 +4,9 @@ const Guitar = require('./Model.js');
 
 const seedDB = function() {
   var data = [];
-  var dataCount = 5;
+  var dataCount = 100;
 
   //create data set with random input for amount (dataCount)
-
   var conditionMaker = function() {
     var condition = Math.floor(Math.random() * 1);
     if (condition === 0) {
@@ -24,11 +23,14 @@ const seedDB = function() {
   };
 
 
+  //creates specified number of data sets
   for (var i = 1; i <= dataCount; i++) {
     var group = i;
 
+    //creates sets of 'similar items'
     var similarItems = [];
-    var numberOfItems = Math.floor(Math.random() * 8);
+    //each id has 3 to 9 similar items
+    var numberOfItems = Math.floor(Math.random() * 6 + 3);
 
     for (var j = 0; j < numberOfItems; j++) {
       var fakename = faker.company.companyName() + '\n' + faker.commerce.productAdjective() + '\n' + faker.commerce.productName() + '\n' + faker.commerce.color();
@@ -48,7 +50,6 @@ const seedDB = function() {
       };
       similarItems.push(itemDescription);
     }
-
 
     var dataBulk = {
       Group: group,
