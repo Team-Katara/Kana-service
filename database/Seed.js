@@ -24,20 +24,20 @@ const seedDB = function() {
   };
 
 
-  for (var i = 0; i <= dataCount; i++) {
-    var group = i + 1;
-
-    var fakename = faker.company.companyName() + '\n' + faker.commerce.productAdjective() + '\n' + faker.commerce.productName() + '\n' + faker.commerce.color();
-    var fakeguitarImage = imageMaker();
-    var fakeReviewCount = Math.floor(Math.random() * 500);
-    var fakeRatings = Math.floor(Math.random() * 5);
-    var fakePrice = '$' + faker.commerce.price();
-    var fakeCondition = conditionMaker();
+  for (var i = 1; i <= dataCount; i++) {
+    var group = i;
 
     var similarItems = [];
     var numberOfItems = Math.floor(Math.random() * 8);
 
     for (var j = 0; j < numberOfItems; j++) {
+      var fakename = faker.company.companyName() + '\n' + faker.commerce.productAdjective() + '\n' + faker.commerce.productName() + '\n' + faker.commerce.color();
+      var fakeguitarImage = imageMaker();
+      var fakeReviewCount = Math.floor(Math.random() * 500);
+      var fakeRatings = Math.floor(Math.random() * 5);
+      var fakePrice = '$' + faker.commerce.price();
+      var fakeCondition = conditionMaker();
+
       var itemDescription = {
         name: fakename,
         guitarImage: fakeguitarImage,
