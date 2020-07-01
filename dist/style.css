@@ -1,11 +1,4 @@
 
-#similar{
-  width: 100%;
-  position: relative
-
-}
-
-
 div.similarItems{
   display: grid;
   grid-template-columns: 50px repeat(6, 140px);
