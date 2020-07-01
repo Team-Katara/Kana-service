@@ -94,7 +94,7 @@ class App extends React.Component {
     var urlParams = new URLSearchParams(window.location.search.substring(1));
     var params = urlParams.get('id');
 
-    axios.get('http://localhost:3000/api/similaritems/?id=' + params)
+    axios.get('http://localhost:3002/api/similaritems/?id=' + params)
       .then(data => {
         console.log(data);
         console.log(data.data);

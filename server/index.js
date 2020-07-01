@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-const port = 3000;
+const port = 3002;
 const Guitar = require('../database/Model.js');
 
 app.use (express.static(__dirname + '/../dist'));
