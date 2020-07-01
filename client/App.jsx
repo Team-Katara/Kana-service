@@ -10,6 +10,13 @@ import styled from 'styled-components';
 ///////////styled components///////////////
 //borderline color #f3eeee
 
+const Title = styled.p`
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+`;
+
 const Banner = styled.div`
   grid-row: 1;
   background-color: white;
@@ -115,16 +122,19 @@ class App extends React.Component {
   renderView() {
     if (this.state.similarItems.length) {
       return (
-        <div className='similarItems' id='container'>
-          <Banner/>
-          <Image/>
-          <Placeholder/>
-          <Name>Name</Name>
-          <Rating >Rating</Rating>
-          <Price >Price</Price>
-          <Condition>Condition</Condition>
-          <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
-          <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
+        <div>
+          <Title>Similar Items</Title>
+          <div className='similarItems' id='container'>
+            <Banner/>
+            <Image/>
+            <Placeholder/>
+            <Name>Name</Name>
+            <Rating >Rating</Rating>
+            <Price >Price</Price>
+            <Condition>Condition</Condition>
+            <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
+            <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
+          </div>
         </div>
       );
     } else {
