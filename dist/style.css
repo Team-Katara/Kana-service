@@ -1,5 +1,5 @@
 
-div.similarItems{
+/* div.similarItems{
   display: grid;
   grid-template-columns: 50px repeat(6, 140px);
   grid-template-rows: 30px 100px 40px 60px 20px 20px 20px;
@@ -14,7 +14,4 @@ div.similarItems{
   ^^ initially used this to position correctly with the chart title '<p>Similar Items</p>' but removed and replaced with 'justify-content' as it would not well with other modules*/
 
 
-}
-
-
-
+/* } */

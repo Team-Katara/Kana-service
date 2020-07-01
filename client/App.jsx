@@ -10,6 +10,20 @@ import styled from 'styled-components';
 ///////////styled components///////////////
 //borderline color #f3eeee
 
+const SimilarItems = styled.div`
+  display: grid;
+  grid-template-columns: 50px repeat(6, 140px);
+  grid-template-rows: 30px 100px 40px 60px 20px 20px 20px;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
+
+  justify-content: center;
+
+  top: 50px;
+
+`;
+
+
 const Title = styled.p`
   font-family: montserratregular,Arial,Helvetica,sans-serif;
   font-size: 10px;
@@ -124,7 +138,7 @@ class App extends React.Component {
       return (
         <div>
           <Title>Similar Items</Title>
-          <div className='similarItems' id='container'>
+          <SimilarItems>
             <Banner/>
             <Image/>
             <Placeholder/>
@@ -134,7 +148,7 @@ class App extends React.Component {
             <Condition>Condition</Condition>
             <CurrentProduct className='similarItems' product={this.state.similarItems[0][0]} />
             <FeedList similarItems={this.state.similarItems[0].slice(1, 6)}/>
-          </div>
+          </SimilarItems>
         </div>
       );
     } else {
