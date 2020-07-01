@@ -20,12 +20,13 @@ div.similarItems{
   font-family: montserratregular,Arial,Helvetica,sans-serif;
   font-size: 10px;
 
-  /* justify-content: center;
-  ^^ had to change to position: absolute to position the <p> correctly
-   */
+  justify-content: center;
 
-  top: 30px;
-  position: absolute;
+  top: 50px;
+
+  /* position: absolute;
+  ^^ initially used this to position correctly with the chart title '<p>Similar Items</p>' but removed and replaced with 'justify-content' as it would not well with other modules*/
+
 
 }
 

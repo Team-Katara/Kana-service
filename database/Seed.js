@@ -17,11 +17,11 @@ const seedDB = function() {
   };
 
   var imageMaker = function() {
-    var baseURL = 'https://picsum.photos/200/300?random=';
+    var baseURL = 'https://picsum.photos/id/';
     var randomize = Math.floor(Math.random() * 100);
-    return baseURL + randomize;
+    var urlsize = '/200/300';
+    return baseURL + randomize + urlsize;
   };
-
 
   //creates specified number of data sets
   for (var i = 1; i <= dataCount; i++) {
