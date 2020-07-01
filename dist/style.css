@@ -1,0 +1,33 @@
+
+#app{
+  width: 100%;
+  position: relative
+
+}
+
+p {
+  position: absolute;
+  left: 15px;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+div.similarItems{
+  display: grid;
+  grid-template-columns: 50px repeat(6, 140px);
+  grid-template-rows: 30px 100px 40px 60px 20px 20px 20px;
+  font-family: montserratregular,Arial,Helvetica,sans-serif;
+  font-size: 10px;
+
+  /* justify-content: center;
+  ^^ had to change to position: absolute to position the <p> correctly
+   */
+
+  top: 30px;
+  position: absolute;
+
+}
+
+
+
