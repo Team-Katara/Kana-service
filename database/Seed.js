@@ -65,10 +65,12 @@ const seedDB = function() {
 
 //seeder function
 const insertData = function() {
-  Guitar.create(seedDB(), function(err) {
+  var data = seedDB();
+  Guitar.create(data)/* , function(err) {
     if (err) { console.log('error seeding:', err); }
-  })
-    .then(() => db.disconnect());
+  }) */
+    .then(() => db.close())
+    .catch(err => console.log(err));
 };
 
 insertData();
