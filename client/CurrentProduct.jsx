@@ -11,7 +11,7 @@ const Banner = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
-  font-size: 10px;
+  font-size: 12px;
   border-top: 1px solid #f3eeee;
   border-right: 1px solid #f3eeee;
 `;
@@ -41,7 +41,7 @@ const Button = styled.button`
   border-color: red;
   border: 1px solid red;
   background-color: white;
-  font-size: 10px;
+  font-size: 12px;
 `;
 
 const Name = styled.div`

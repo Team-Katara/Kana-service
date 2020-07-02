@@ -12,22 +12,23 @@ import styled from 'styled-components';
 
 const SimilarItems = styled.div`
   display: grid;
-  grid-template-columns: 50px repeat(6, 140px);
+  grid-template-columns: 5% repeat(6, 15%);
   grid-template-rows: 30px 100px 40px 60px 20px 20px 20px;
   font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
+  font-size: 12px;
+  max-width: 1500px;
 
   justify-content: center;
-
-  top: 50px;
-
 `;
 
 
 const Title = styled.p`
   font-family: montserratregular,Arial,Helvetica,sans-serif;
-  font-size: 10px;
+  font-size: 1.5em;
   font-weight: bold;
+  position: relative;
+  left: 30px;
+  margin-bottom: 0;
 }
 `;
 

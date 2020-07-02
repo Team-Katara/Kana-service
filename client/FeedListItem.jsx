@@ -34,7 +34,7 @@ const Button = styled.button`
     border: 1px solid red;
     background-color: white;
     font-family: montserratregular,Arial,Helvetica,sans-serif;
-    font-size: 10px;
+    font-size: 12px;
   `;
 
 const Name = styled.div`
