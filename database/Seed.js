@@ -16,10 +16,11 @@ const seedDB = function() {
     }
   };
 
+  // 'https://fec-katara-center.s3.amazonaws.com/11-200x300.jpg'/
   var imageMaker = function() {
-    var baseURL = 'https://picsum.photos/id/';
+    var baseURL = 'https://fec-katara-center.s3.amazonaws.com/';
     var randomize = Math.floor(Math.random() * 100);
-    var urlsize = '/200/300';
+    var urlsize = '-200x300.jpg';
     return baseURL + randomize + urlsize;
   };
 
