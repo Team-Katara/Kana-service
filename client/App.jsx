@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 
 ///////////styled components///////////////
-//borderline color #f3eeee
 
 const SimilarItems = styled.div`
   display: grid;
@@ -116,7 +115,7 @@ class App extends React.Component {
     var urlParams = new URLSearchParams(window.location.search.substring(1));
     var params = urlParams.get('id');
 
-    axios.get('http://107.23.121.182:3002/api/similaritems/?id=' + params)
+    axios.get('http://localhost:3002/api/similaritems/?id=' + params)
       .then(data => {
         var product = [];
         product.push(data.data);

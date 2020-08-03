@@ -16,7 +16,6 @@ const seedDB = function() {
     }
   };
 
-  // 'https://fec-katara-center.s3.amazonaws.com/11-200x300.jpg'/
   var imageMaker = function() {
     var baseURL = 'https://fec-katara-center.s3.amazonaws.com/';
     var randomize = Math.floor(Math.random() * 100);
@@ -67,9 +66,7 @@ const seedDB = function() {
 //seeder function
 const insertData = function() {
   var data = seedDB();
-  Guitar.create(data)/* , function(err) {
-    if (err) { console.log('error seeding:', err); }
-  }) */
+  Guitar.create(data)
     .then(() => db.close())
     .catch(err => console.log(err));
 };
