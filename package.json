@@ -52,7 +52,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "aws-sdk": "^2.709.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
